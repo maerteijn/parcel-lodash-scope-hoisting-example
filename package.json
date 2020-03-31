@@ -1,0 +1,28 @@
+{
+  "name": "parcel-lodash-scope-hoisting-example",
+  "version": "0.0.1",
+  "description": "Example repo which demonstrates a weird thing with parcel, scope hoisting and lodash",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html --public-url ./",
+    "build:scope-hoisting": "parcel build index.html --public-url ./ --experimental-scope-hoisting"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maerteijn/parcel-lodash-scope-hoisting-example.git"
+  },
+  "author": "Martijn Jacobs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maerteijn/parcel-lodash-scope-hoisting-example/issues"
+  },
+  "homepage": "https://github.com/maerteijn/parcel-lodash-scope-hoisting-example#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
