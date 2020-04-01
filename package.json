@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel index.html",
-    "build": "parcel build index.html --public-url ./  --detailed-report --no-minify",
-    "build:scope-hoisting": "parcel build index.html --public-url ./ --experimental-scope-hoisting  --detailed-report --no-minify"
+    "build": "parcel build index.html --no-cache --public-url ./  --detailed-report --no-minify",
+    "build:scope-hoisting": "parcel build index.html --no-cache --public-url ./ --experimental-scope-hoisting  --detailed-report --no-minify"
   },
   "repository": {
     "type": "git",
