@@ -4,10 +4,14 @@
   "description": "Example repo which demonstrates a weird thing with parcel, scope hoisting and lodash",
   "main": "index.js",
   "scripts": {
+    "parcel-dev:checkout": "[ ! -d ./parcel ] && git clone --single-branch --branch 4410-parcel-1-fix-global-insertions https://github.com/maerteijn/parcel.git || exit 0",
+    "parcel-dev:install": "cd parcel && yarn install",
+    "parcel-dev:build": "cd parcel && yarn build",
+    "parcel-dev": "yarn run parcel-dev:checkout && yarn run parcel-dev:install && yarn run parcel-dev:build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel index.html",
-    "build": "parcel build index.html --no-cache --public-url ./  --detailed-report --no-minify",
-    "build:scope-hoisting": "parcel build index.html --no-cache --public-url ./ --experimental-scope-hoisting  --detailed-report --no-minify"
+    "dev": "./parcel/node_modules/.bin/parcel1 index.html",
+    "build": "./parcel/node_modules/.bin/parcel1 build index.html --detailed-report --no-minify --no-cache --public-url ./ ",
+    "build:scope-hoisting": "./parcel/node_modules/.bin/parcel1 build index.html --experimental-scope-hoisting --detailed-report --no-minify --no-cache --public-url ./ "
   },
   "repository": {
     "type": "git",
@@ -19,9 +23,6 @@
     "url": "https://github.com/maerteijn/parcel-lodash-scope-hoisting-example/issues"
   },
   "homepage": "https://github.com/maerteijn/parcel-lodash-scope-hoisting-example#readme",
-  "devDependencies": {
-    "parcel-bundler": "^1.12.4"
-  },
   "dependencies": {
     "lodash": "^4.17.15"
   }

@@ -1,5 +1,13 @@
 # A parcel-lodash-scope-hoisting example
-Example repo which demonstrates a weird thing with parcel, scope hoisting and lodash
+Example repo which demonstrates a weird thing with parcel, scope hoisting and lodash.
+
+This branch is using parcel with the the (4410-parcel-1-fix-global-insertions)[https://github.com/maerteijn/parcel/tree/4410-parcel-1-fix-global-insertions] branch
+
+## Before testing:
+```
+yarn run parcel-dev
+yarn run install
+```
 
 See https://github.com/parcel-bundler/parcel/issues/4410
 
@@ -7,7 +15,7 @@ See also the `with-4410-parcel-1-fix-global-insertions` branch with a proposed f
 
 ## Without --experimental-scope-hoisting
 ```bash
-npm run build
+yarn run build
 ```
 
 Open `dist/index.html` in a browser, no error
@@ -15,11 +23,7 @@ Open `dist/index.html` in a browser, no error
 
 ## With --experimental-scope-hoisting
 ```bash
-npm run build:scope-hoisting
+yarn run build:scope-hoisting
 ```
 
-Open `dist/index.html` in a browser, see the console:
-
-```
-ReferenceError: require is not defined
-```
+Open `dist/index.html` in a browser, no error as well, so the scope hoisting works now as expected!
